@@ -1,0 +1,127 @@
+
+<br><br><br>
+<table align="center"><tr><td>
+<form (ngSubmit)="save()" class="form-group" #myform="ngForm">
+    <table align="center">
+        <tr><td>
+            <label for="">Name</label>&nbsp;
+        </td><td>
+            <input type="text" class="form-control" [(ngModel)]="model.name" name="name">
+        
+        </td></tr>
+        <tr><td>
+            <label for="">Address</label>&nbsp;
+        </td><td>
+            <textarea name="" id="" cols="30" rows="3" class="form-control" [(ngModel)]="model.address" name="address"></textarea>
+        </td></tr>
+        <tr><td>
+            <label for="">Mobile</label>&nbsp;
+        </td><td>
+            <input type="text" class="form-control" [(ngModel)]="model.mobile" name="mobile">
+        
+        </td></tr>
+        <tr><td>
+            <label for="">Phone</label>&nbsp;
+        </td><td>
+            <input type="text" class="form-control" [(ngModel)]="model.phone" name="phone">
+        
+        </td></tr>
+    
+        <tr><td>
+            <label for="">Email</label>&nbsp;
+        </td><td>
+            <input type="text" class="form-control" [(ngModel)]="model.email" name="email">
+       
+        </td></tr>
+        <tr><td>
+            <label for="">Profession</label>&nbsp;
+        </td><td>
+            <input type="text" class="form-control" [(ngModel)]="model.profession" name="profession">
+        
+        </td></tr>
+        <tr><td>
+            <label for="">Contact Person</label>&nbsp;
+        </td><td>
+            <input type="text" class="form-control" [(ngModel)]="model.cp" name="cp">
+        
+        </td></tr>
+        <tr><td>
+            <label for="">Nation ID</label>&nbsp;
+        </td><td>
+            <input type="text" class="form-control" [(ngModel)]="model.nid" name="nid">
+        
+        </td></tr>
+        <tr><td>
+            <label for="">Passport No</label>&nbsp;
+        </td><td>
+            <input type="text" class="form-control" [(ngModel)]="model.passport" name="passport">
+        
+        </td></tr>
+        <tr><td>
+            <label for="">Date Of Birth</label>&nbsp;
+        </td><td>
+            <input type="date" class="form-control" [(ngModel)]="model.dob" name="dob">&nbsp;&nbsp;
+       
+            <label for="">Gender</label>&nbsp;
+        
+            <input type="radio" class="form-control" value="male" name="gender" [(ngModel)]="model.gender" >
+            <label for="">Male</label>&nbsp;
+            <input type="radio" class="form-control" value="female" name="gender" [(ngModel)]="model.gender" >
+            <label for="">Female</label>
+        </td></tr>
+    
+        
+        <tr><td>
+            <label for="">Wed Day</label>&nbsp;
+        </td><td>
+            <input type="date" class="form-control" [(ngModel)]="model.wed" name="wed">&nbsp;&nbsp;
+    
+            <input type="checkbox" class="form-control" value="active" [(ngModel)]="model.active" name="active">
+            <label for="">Active</label>&nbsp;
+            <input type="checkbox" class="form-control" value="cardholder" [(ngModel)]="model.ch" name="ch">
+            <label for="">Card Holder</label>
+        </td></tr>
+    
+    
+    
+        <tr><td>
+            <label for="">Card Issue on</label>&nbsp;
+        </td><td>
+            <input type="date" class="form-control" [(ngModel)]="model.cin" name="cin">
+        
+        </td></tr>
+        <tr><td>
+            <label for="">Note</label>&nbsp;
+        </td><td>
+            <textarea name="" id="" cols="30" rows="3" class="form-control" [(ngModel)]="model.note" name="note"></textarea>
+        
+        </td></tr>
+        <tr><td colspan="2" align="center">
+        
+        <button class="btn btn-primary">save</button> 
+    </td></tr>
+    </table>
+    </form></td></tr>
+    <tr><td align="center"><button class="btn btn-primary" (click)="resetForm(myform)">New</button>&nbsp;&nbsp;</td></tr>
+</table>
+    <br><br><br>
+    <table class="table" align="center">
+        <thead>
+            <!-- <th>Did</th> -->
+            <th>Name</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th>Card Issued on</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tr *ngFor="let user of userlist">
+            <!-- <td>{{user.did}}</td> -->
+            <td>{{user.name}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.mobile}}</td>
+            <td>{{user.cin}}</td>
+            <td><button (click)="edit(user)">Edit</button></td>
+            <td><button (click)="delete(user)">Delete</button></td>
+        </tr>
+    </table>
